@@ -21,6 +21,7 @@ class Stack
 
 end
 
+# Tests
 stack = Stack.new
 stack.add(4)
 stack.add(5)
@@ -53,6 +54,7 @@ class Queue
 
 end
 
+# Tests
 queue = Queue.new
 queue.enqueue(4)
 queue.enqueue(5)
@@ -101,6 +103,7 @@ class Map
 
 end
 
+# Tests
 map = Map.new
 map.assign(4, "I")
 map.assign(5, "LOVE")
