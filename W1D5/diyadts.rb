@@ -1,3 +1,4 @@
+require 'byebug'
 # EXERCISE 1 - STACK (LIFO)
 
 class Stack
@@ -70,12 +71,13 @@ class Map
   end
 
   def assign(key, value)
-    @map.each do |pair|
-      if pair[0] == key
-        pair = [key, value]
+    # byebug if key == 10
+    @map.each_with_index do |pair, index|
+      if pair.first == key
+        @map[index] = [key, value]
       end
     end
-    @map << [key, value]
+    @map << [key, value] unless @map.include?([key, value])
   end
 
   def lookup(key)
