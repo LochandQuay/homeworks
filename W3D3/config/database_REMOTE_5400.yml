@@ -19,11 +19,7 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-<<<<<<< HEAD
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-=======
   pool: 5
->>>>>>> a200aec8c47b2502a955a8f6b87305cb844de271
 
 development:
   <<: *default
