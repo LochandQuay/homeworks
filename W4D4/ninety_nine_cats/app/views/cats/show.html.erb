@@ -34,3 +34,8 @@
 <% unless is_owner %>
 <%= link_to "Request Rental of #{@cat.name}", new_cat_rental_request_url %>
 <% end %>
+
+<br>
+<% content_for :footer do %>
+  <p>You are viewing <%= @cat.name %>'s Bio Page.</p>
+<% end %>
