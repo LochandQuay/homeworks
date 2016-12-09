@@ -36,6 +36,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+<<<<<<< HEAD
+=======
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -71,6 +76,13 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+<<<<<<< HEAD
+=======
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -91,6 +103,10 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+<<<<<<< HEAD
+=======
+    public_suffix (2.0.4)
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -163,6 +179,10 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+<<<<<<< HEAD
+=======
+  letter_opener
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
   pg
   pry-rails
   rails (~> 4.2.0)

@@ -5,7 +5,10 @@
 #   pool: 5
 #   timeout: 5000
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
 # PostgreSQL. Versions 8.2 and up are supported.
 #
 # Install the pg driver:
@@ -31,7 +34,11 @@ default: &default
 
 development:
   <<: *default
+<<<<<<< HEAD
   database: x99Cats_development
+=======
+  database: ninety_nine_cats_development
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -65,7 +72,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+<<<<<<< HEAD
   database: x99Cats_test
+=======
+  database: ninety_nine_cats_test
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -88,6 +99,12 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   database: x99Cats_production
   username: x99Cats
   password: <%= ENV['X99CATS_DATABASE_PASSWORD'] %>
+=======
+  database: ninety_nine_cats_production
+  username: ninety_nine_cats
+  password: <%= ENV['NINETY_NINE_CATS_DATABASE_PASSWORD'] %>
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3

@@ -2,11 +2,16 @@
 <br>
 
 <form action="/session" method="POST">
+<<<<<<< HEAD
   <input
   type="hidden"
   name="authenticity_token"
   value="<%= form_authenticity_token %>">
   
+=======
+  <%= auth_token %>
+
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
   <label for="username">Username</label><br>
   <input id="username" type="text" name="user[username]"><br>
 
@@ -15,3 +20,10 @@
 
   <input type="submit" value="Submit">
 </form>
+<<<<<<< HEAD
+=======
+
+<% content_for :footer do %>
+  <p>This page is for logging into your 99 Cats account</p>
+<% end %>
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3

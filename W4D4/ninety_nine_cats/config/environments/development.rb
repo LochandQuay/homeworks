@@ -15,6 +15,10 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+<<<<<<< HEAD
+=======
+  config.action_mailer.delivery_method = :letter_opener
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

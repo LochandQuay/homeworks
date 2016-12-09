@@ -4,7 +4,10 @@ class CatsController < ApplicationController
   def index
     @cats = Cat.all
     render :index
+<<<<<<< HEAD
     fail
+=======
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
   end
 
   def show

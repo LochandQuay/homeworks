@@ -17,4 +17,8 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'annotate'
+<<<<<<< HEAD
+=======
+  gem 'letter_opener'
+>>>>>>> 6e95415bcccdae912372df90cc2858acd9cd6ba3
 end
