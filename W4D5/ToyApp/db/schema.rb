@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160602040839) do
+=======
+ActiveRecord::Schema.define(version: 20161209031141) do
+>>>>>>> 05ba7f6a89f2181f0f527fb7d5f5da27a2fd295a
 
   create_table "cats", force: :cascade do |t|
     t.string   "name",       null: false
@@ -25,4 +29,17 @@ ActiveRecord::Schema.define(version: 20160602040839) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "toys", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.integer  "toyable_id"
+    t.string   "toyable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "toys", ["toyable_type", "toyable_id"], name: "index_toys_on_toyable_type_and_toyable_id"
+
+>>>>>>> 05ba7f6a89f2181f0f527fb7d5f5da27a2fd295a
 end
