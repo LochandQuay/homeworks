@@ -21,7 +21,7 @@
   <nav>
   <div class="nav-wrapper">
     <a href=" <%= subs_url %> " class="brand-logo">
-      Reddit Homepage | <%= current_user.username %> </a>
+      Reddit Homepage | <%= current_user.username if current_user %> </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
 
       <li><a href=" <%= new_session_url %> ">Sign In</a></li>

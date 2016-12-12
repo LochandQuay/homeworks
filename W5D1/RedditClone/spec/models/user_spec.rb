@@ -1,26 +1,30 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe User, type: :model do
   subject(:user) do
-    User.new(name: 'Gatsby', password: 'thegreatcaterpie')
+    User.new(
+      username: 'Gatsby',
+      password: 'thegreatcaterpie'
+    )
   end
 
   # validations
-  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:username) }
   it { should validate_presence_of(:password_digest) }
   it { should validate_length_of(:password).is_at_least(6) }
 
   # associations
   it { should have_many(:subs) }
-  it { should have_many(:user_votes) }
+  # it { should have_many(:user_votes) }
   it { should have_many(:comments) }
 
   # methods
-  it "creates a password digest when given a password"
+  it "creates a password digest when given a password" do
     expect(user.password_digest).to_not be_nil
   end
 
-  it "creates a session token before validation"
+  it "creates a session token before validation" do
     user.valid?
     expect(user.session_token).to_not be_nil
   end
