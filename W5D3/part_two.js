@@ -55,3 +55,14 @@ Elephant.prototype.paradeHelper = function() {
 herd.forEach(el => el.paradeHelper());
 
 // Phase IV: Closures
+function dinerBreakfast() {
+  var orderIntro = "I'll have pancakes";
+
+  function addOrder(order) {
+    orderIntro = orderIntro + " and " + order
+    return orderIntro + " please."
+  }
+
+  return addOrder;
+}
+let bfastOrder = dinerBreakfast(); // currently does not return initially...
