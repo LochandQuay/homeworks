@@ -61,8 +61,23 @@
 	var _root = __webpack_require__(186);
 	
 	var _root2 = _interopRequireDefault(_root);
-
+	
+	var _giphy_actions = __webpack_require__(184);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	  var store = (0, _store2.default)();
+	  _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), document.getElementById('root'));
+	});
+	
+	// FOR TESTING
+	
+	
+	var store = (0, _store2.default)();
+	window.store = store;
+	window.fetchSearchGiphys = _giphy_actions.fetchSearchGiphys;
+	window.receiveSearchGiphys = _giphy_actions.receiveSearchGiphys;
 
 /***/ },
 /* 1 */
@@ -19764,6 +19779,10 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _redux = __webpack_require__(160);
 	
 	var _reduxThunk = __webpack_require__(181);
@@ -19773,8 +19792,14 @@
 	var _root_reducer = __webpack_require__(182);
 	
 	var _root_reducer2 = _interopRequireDefault(_root_reducer);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var configureStore = function configureStore() {
+	  return (0, _redux.createStore)(_root_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	};
+	
+	exports.default = configureStore;
 
 /***/ },
 /* 160 */
@@ -20864,6 +20889,10 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _giphy_actions = __webpack_require__(184);
 	
 	var GiphysReducer = function GiphysReducer() {
@@ -20877,6 +20906,8 @@
 	      return state;
 	  }
 	};
+	
+	exports.default = GiphysReducer;
 
 /***/ },
 /* 184 */
@@ -20887,7 +20918,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.receiveSearchGiphys = exports.RECEIVE_SEARCH_GIPHYS = undefined;
+	exports.fetchSearchGiphys = exports.receiveSearchGiphys = exports.REQUEST_SEARCH_GIPHYS = exports.RECEIVE_SEARCH_GIPHYS = undefined;
 	
 	var _api_util = __webpack_require__(185);
 	
@@ -20896,11 +20927,20 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var RECEIVE_SEARCH_GIPHYS = exports.RECEIVE_SEARCH_GIPHYS = 'RECEIVE_SEARCH_GIPHYS';
+	var REQUEST_SEARCH_GIPHYS = exports.REQUEST_SEARCH_GIPHYS = 'REQUEST_SEARCH_GIPHYS';
 	
 	var receiveSearchGiphys = exports.receiveSearchGiphys = function receiveSearchGiphys(giphys) {
 	  return {
 	    type: RECEIVE_SEARCH_GIPHYS,
 	    giphys: giphys
+	  };
+	};
+	
+	var fetchSearchGiphys = exports.fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
+	  return function (dispatch) {
+	    return APIUtil.fetchSearchGiphys(searchTerm).then(function (giphys) {
+	      return dispatch(receiveSearchGiphys(giphys.data));
+	    });
 	  };
 	};
 
