@@ -12,23 +12,29 @@ class GiphysSearch extends React.Component {
   }
 
   handleChange(e) {
-
+    e.preventDefault();
+    this.setState( { searchTerm: e.target.value });
   }
 
   handleSubmit(e) {
-
+    e.preventDefault();
+    this.props.fetchSearchGiphys(this.state.searchTerm);
   }
 
   render() {
     return (
       <div>
-        <form>
-          <input>
-
-          </input>
-
-          <button onClick={this.handleSubmit}>Search Giphys!</button>
+        <h1>Giphy Search!</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            onChange={this.handleChange}
+            className="search-bar"
+            placeholder="You'll be disappointed..."
+            value={this.state.searchTerm} />
+          <button>Search Giphys!</button>
         </form>
+
+        <GiphysIndex giphys={this.props.giphys} />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 body {
   margin: 30px;
+  font-family: sans-serif;
 }
 
 ul {
@@ -33,5 +34,6 @@ input {
 button {
   padding: 6px;
   border: none;
+  border-radius: 3px;
   font-size: 10px;
 }
