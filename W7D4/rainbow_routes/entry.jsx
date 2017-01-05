@@ -58,9 +58,14 @@ Rainbow = withRouter(Rainbow);
 
 const routes = (
   <Route path="/" component={Rainbow}>
-      <Route path="red" component={Red} />
+      <Route path="red" component={Red}>
+        <Route path="orange" component={Orange} />
+        <Route path="yellow" component={Yellow} />
+      </Route>
       <Route path="green" component={Green} />
-      <Route path="blue" component={Blue} />
+      <Route path="blue" component={Blue}>
+        <Route path="indigo" component={Indigo} />
+      </Route>
       <Route path="violet" component={Violet} />
   </Route>
 );
