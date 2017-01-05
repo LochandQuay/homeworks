@@ -52,13 +52,16 @@ class Rainbow extends React.Component {
   addViolet() {
     // your code here
   }
-};
+}
 
 Rainbow = withRouter(Rainbow);
 
 const routes = (
   <Route path="/" component={Rainbow}>
-    // your routes here
+      <Route path="red" component={Red} />
+      <Route path="green" component={Green} />
+      <Route path="blue" component={Blue} />
+      <Route path="violet" component={Violet} />
   </Route>
 );
 
